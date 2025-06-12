@@ -100,3 +100,33 @@ When making interactive projects, you may feel tempted to:
 We recommend holding off on those improvements until you work on **portfolio projects** later.
 
 For more information, read Part 5 and Part 7 of *Becoming a TOP Success Story*.
+--------------
+PseudoCode for Rock Paper Scissors
+
+FUNCTION getHumanChoice
+    PROMPT user to enter "rock", "paper", or "scissors"
+    CONVERT input to lowercase
+    RETURN user choice
+
+FUNCTION getComputerChoice
+    GENERATE a random number between 0 and 2
+    IF number == 0, RETURN "rock"
+    ELSE IF number == 1, RETURN "paper"
+    ELSE RETURN "scissors"
+
+FUNCTION determineWinner(humanChoice, computerChoice)
+    IF humanChoice == computerChoice
+        RETURN "Tie"
+    ELSE IF (humanChoice == "rock" AND computerChoice == "scissors") OR
+            (humanChoice == "paper" AND computerChoice == "rock") OR
+            (humanChoice == "scissors" AND computerChoice == "paper")
+        RETURN "You win!"
+    ELSE
+        RETURN "You lose!"
+
+MAIN FUNCTION playGame
+    CALL getHumanChoice and store in human
+    CALL getComputerChoice and store in computer
+    CALL determineWinner with human and computer
+    ALERT the result
+    ASK if user wants to play again
