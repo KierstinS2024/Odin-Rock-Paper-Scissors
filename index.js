@@ -7,12 +7,23 @@ console.log("Rock Paper Scissors Game");
 //     RETURN user choice
 
 function getHumanChoice() {
-  let choice = prompt("Enter rock, paper, or scissors:").toLowerCase();
-  while (!["rock", "paper", "scissors"].includes(choice)) {
-    choice = prompt(
-      "Invalid choice. Please enter rock, paper, or scissors:"
-    ).toLowerCase();
+  let choice = prompt("Enter rock, paper, or scissors:");
+  if (choice === null) {
+    alert("Game cancelled.");
+    return null; // Stop and return immediately if user clicks Cancel
   }
+
+  choice = choice.toLowerCase();
+
+  while (!["rock", "paper", "scissors"].includes(choice)) {
+    choice = prompt("Invalid choice. Please enter rock, paper, or scissors:");
+    if (choice === null) {
+      alert("Game cancelled.");
+      return null;
+    }
+    choice = choice.toLowerCase();
+  }
+
   return choice;
 }
 
@@ -62,6 +73,8 @@ function playGame() {
 
   while (playAgain) {
     const humanChoice = getHumanChoice();
+    if (humanChoice === null) return; // Exit if game was cancelled
+
     const computerChoice = getComputerChoice();
     const result = determineWinner(humanChoice, computerChoice);
 
@@ -72,7 +85,10 @@ function playGame() {
     playAgain = confirm("Do you want to play again?");
   }
 }
+
 document.addEventListener("DOMContentLoaded", () => {
   const button = document.querySelector(".btn");
-  button.addEventListener("click", playGame);
+  if (button) {
+    button.addEventListener("click", playGame);
+  }
 });
