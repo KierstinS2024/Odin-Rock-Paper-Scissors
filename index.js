@@ -65,6 +65,9 @@ function playGame() {
 
 document.addEventListener("DOMContentLoaded", () => {
   const button = document.querySelector(".btn");
+  const rock = document.querySelector(".rock");
+  const paper = document.querySelector(".paper");
+  const scissors = document.querySelector(".scissors");
   if (button) {
     button.addEventListener("click", playGame);
   }
