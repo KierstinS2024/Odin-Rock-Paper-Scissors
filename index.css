@@ -1,59 +1,143 @@
-/* index.css */
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f2f2f2;
-  color: #333;
-  text-align: center;
+/* Reset some default styles */
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+/* Body and layout */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #f5f5f5;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   height: 100vh;
+  padding: 20px;
+  text-align: center;
 }
 
+/* Title */
 h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
+  font-size: 3rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.3);
 }
 
+/* Instruction */
 p {
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  font-style: italic;
+  color: #dcdcdccc;
 }
 
-.button {
-  margin: 0 auto;
+/* Buttons container */
+.options {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 40px;
 }
 
-#rock, #paper, #scissors {
-  padding: 1rem 2rem;
+/* Buttons base style */
+.options button {
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  padding: 15px 30px;
   font-size: 1.2rem;
   color: white;
-  border: none;
-  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-#rock{
-    background-color: #383838;
-
-}
-#paper{
-    background-color: #53c2e4;
-
-}
-#scissors{
-    background-color: #4caf50;
-
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  user-select: none;
+  flex: 1; /* make buttons expand equally */
 }
 
-#rock:hover, #paper:hover, #scissors:hover {
-  background-color: #ffa600;
+/* Button hover effect */
+.options button:hover {
+  background-color: rgba(255, 255, 255, 0.35);
+  transform: scale(1.05);
+  border-color: white;
 }
 
-#results{
-  background-color: #ffe5b4;
-  color: black
+/* Button active effect */
+.options button:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Different colors for each button */
+#rock {
+  background-color: #ff4c4c; /* red */
+  border-color: #e63946;
+}
+
+#rock:hover {
+  background-color: #e63946;
+}
+
+#paper {
+  background-color: #4cc9f0; /* light blue */
+  border-color: #1da1f2;
+}
+
+#paper:hover {
+  background-color: #1da1f2;
+}
+
+#scissors {
+  background-color: #ffb703; /* amber */
+  border-color: #fb8500;
+}
+
+#scissors:hover {
+  background-color: #fb8500;
+}
+
+/* Results container */
+.results-container {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 14px;
+  padding: 25px 30px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.4);
+  font-size: 1.3rem;
+  font-weight: 600;
+  white-space: pre-line; /* preserve newlines */
+  user-select: none;
+  color: #f5f5f5;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .options {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .options button {
+    font-size: 1.1rem;
+    padding: 12px 20px;
+  }
+
+  .results-container {
+    font-size: 1.1rem;
+    padding: 20px 25px;
+    max-width: 100%;
+  }
 }

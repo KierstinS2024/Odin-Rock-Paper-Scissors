@@ -1,6 +1,5 @@
 // Rock, Paper, Scissors Game;
 
-
 // FUNCTION getComputerChoice
 function getComputerChoice() {
   const choices = ["rock", "paper", "scissors"];
@@ -24,15 +23,9 @@ function determineWinner(buttonId, computerChoice) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const rock = document
-    .getElementById("rock")
-    .addEventListener("click", playGame);
-  const paper = document
-    .getElementById("paper")
-    .addEventListener("click", playGame);
-  const scissors = document
-    .getElementById("scissors")
-    .addEventListener("click", playGame);
+  document.getElementById("rock").addEventListener("click", playGame);
+  document.getElementById("paper").addEventListener("click", playGame);
+  document.getElementById("scissors").addEventListener("click", playGame);
 
   function playGame(event) {
     const computerChoice = getComputerChoice();
