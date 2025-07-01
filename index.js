@@ -64,11 +64,35 @@ function playGame() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  const button = document.querySelector(".btn");
-  const rock = document.querySelector(".rock");
-  const paper = document.querySelector(".paper");
-  const scissors = document.querySelector(".scissors");
-  if (button) {
-    button.addEventListener("click", playGame);
+  //create event listeners and change to switch case for buttons
+  const button = document
+    .querySelector(".btn")
+    .addEventListener("click", playGame);
+  const rock = document
+    .getElementById("rock")
+    .addEventListener("click", handleClick);
+  const paper = document
+    .getElementById("paper")
+    .addEventListener("click", handleClick);
+  const scissors = document
+    .getElementById("scissors")
+    .addEventListener("click", handleClick);
+
+  function handleClick(event) {
+    const buttonId = event.target.id;
+
+    switch (buttonId) {
+      case "rock":
+        console.log("you clicked rock!");
+        break;
+      case "paper":
+        console.log("you clicked paper!");
+        break;
+      case "scissors":
+        console.log("you clicked scissors!");
+        break;
+      default:
+        console.log("something went wrooooong!");
+    }
   }
 });
