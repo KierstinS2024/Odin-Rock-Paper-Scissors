@@ -38,8 +38,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const computerChoice = getComputerChoice();
     const buttonId = event.target.id;
     const result = determineWinner(buttonId, computerChoice);
-    console.log(
-      `You chose: ${buttonId}\nComputer chose: ${computerChoice}\nResult: ${result}`
-    );
+    document.getElementById(
+      "results"
+    ).innerText = `You chose: ${buttonId}\nComputer chose: ${computerChoice}\nResult: ${result}`;
   }
 });
