@@ -27,17 +27,28 @@ p {
   margin: 0 auto;
 }
 
-.btn {
+#rock, #paper, #scissors {
   padding: 1rem 2rem;
   font-size: 1.2rem;
-  background-color: #4caf50;
   color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+#rock{
+    background-color: #383838;
 
-.btn:hover {
-  background-color: #45a049;
+}
+#paper{
+    background-color: #53c2e4;
+
+}
+#scissors{
+    background-color: #4caf50;
+
+}
+
+#rock:hover, #paper:hover, #scissors:hover {
+  background-color: #ffa600;
 }
